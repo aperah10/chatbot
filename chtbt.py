@@ -3,36 +3,23 @@ from googlesearch import search
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
   
-  
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
     return "Hello, World!"
 
+@app.route("/sms", methods=['POST'])
+def sms_reply():
+    """Respond to incoming calls with a simple text message."""
+    # Fetch the message
+    msg = request.form.get('Body')
 
-@app.route("/cht", methods=["GET"])
-  
-# chatbot logic
-def bot():
-  
-    # user input
-    user_msg = request.values.get('Body', '').lower()
-  
-    bot_resp= MessagingResponse()
-    msg = bot_resp.message()
+    # Create reply
+    resp = MessagingResponse()
+    resp.message("im rahul: {}".format(msg))
 
-    if 'hello' in user_msg:
-        msg.body("Hi there! How may I help you?")
-    elif 'you r hero' in user_msg:
-        msg.body("yes i m hero.")
-        
-    else:
-        msg.body("hahahaha")
-  
-    
-    return str(bot_resp)
-  
-  
+    return str(resp)
+
 if __name__ == "__main__":
     app.run(debug=True)
