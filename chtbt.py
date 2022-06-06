@@ -31,7 +31,8 @@ def bot():
 
             if 'videos1' in user_msg:
                 msg.body("videos1")
-    else:
+    
+    elif 'no' or"No" in user_msg:
             msg.body("Do you a Grow any other crop ?")
             msg.body("Yes")
             msg.body("No") 
