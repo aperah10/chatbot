@@ -13,11 +13,10 @@ def hello():
 def bot():
     """Respond to incoming calls with a simple text message."""
     # Fetch the message
-    msg = request.form.get('Body')
+    user_msg = request.form.get('Body')
 
-    # Create reply
-    resp = MessagingResponse()
-    # resp.message("im rahul: {}".format(msg))
+    
+    bot_resp= MessagingResponse()
     msg = bot_resp.message()
     if 'hello' in user_msg:
         msg.body("Hi there! How may I help you?")
