@@ -11,7 +11,7 @@ def hello():
     return "Hello, World!"
 
 
-@app.route("/cht", methods=["POST"])
+@app.route("/cht", methods=["GET"])
   
 # chatbot logic
 def bot():
