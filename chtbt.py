@@ -14,15 +14,16 @@ def bot():
     """Respond to incoming calls with a simple text message."""
     
     # Fetch the message
+    user_msg = request.form.get('Body').lower()
     bot_resp= MessagingResponse()
     msg = bot_resp.message()
-    user_msg = request.form.get('Body').lower()
+    
     
     msg.body("Are you a Corn Grower ?")
         
           
          
-    if 'yes' or"Yes" in user_msg:
+    if 'yes' in user_msg:
             msg.body("Did You Know that Fortenza Duo can secure your plant stand ?")
             msg.body("videos1")
             msg.body("videos2")
