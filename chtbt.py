@@ -12,15 +12,18 @@ def hello():
 @app.route("/cht", methods=['POST'])
 def bot():
     """Respond to incoming calls with a simple text message."""
+    
     # Fetch the message
-    user_msg = request.form.get('Body').lower()
     bot_resp= MessagingResponse()
     msg = bot_resp.message()
+    user_msg = request.form.get('Body').lower()
+    
+    
+
     if 'hello' in user_msg:
         msg.body("Are you a Corn Grower ?")
          
-        user_msg2 = request.form.get('Body').lower()
-        if 'yes' or"Yes" in user_msg2:
+    elif 'yes' or"Yes" in user_msg:
             msg.body("Did You Know that Fortenza Duo can secure your plant stand ?")
             msg.body("videos1")
             msg.body("videos2")
@@ -28,15 +31,14 @@ def bot():
 
             if 'videos1' in user_msg:
                 msg.body("videos1")
-        else:
+    else:
             msg.body("Do you a Grow any other crop ?")
             msg.body("Yes")
             msg.body("No") 
 
             
 
-    else:
-        msg.body("Valid Question for this ")
+   
 
 
     return str(bot_resp)
