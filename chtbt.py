@@ -18,9 +18,9 @@ def bot():
     msg = bot_resp.message()
     if 'hello' in user_msg:
         msg.body("Are you a Corn Grower ?")
-        msg.body("Yes")
-        msg.body("No") 
-        if 'yes' or"Yes" in user_msg:
+         
+        user_msg2 = request.form.get('Body').lower()
+        if 'yes' or"Yes" in user_msg2:
             msg.body("Did You Know that Fortenza Duo can secure your plant stand ?")
             msg.body("videos1")
             msg.body("videos2")
