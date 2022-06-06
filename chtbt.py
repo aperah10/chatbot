@@ -13,13 +13,28 @@ def hello():
 def bot():
     """Respond to incoming calls with a simple text message."""
     # Fetch the message
-    user_msg = request.form.get('Body')
-
-    
+    user_msg = request.form.get('Body').lower()
     bot_resp= MessagingResponse()
     msg = bot_resp.message()
     if 'hello' in user_msg:
-        msg.body("Hi there! How may I help you?")
+        msg.body("Are you a Corn Grower ?")
+        msg.body("Yes")
+        msg.body("No") 
+        if 'yes' or"Yes" in user_msg:
+            msg.body("Did You Know that Fortenza Duo can secure your plant stand ?")
+            msg.body("videos1")
+            msg.body("videos2")
+            msg.body("videos3")
+
+            if 'videos1' in user_msg:
+                msg.body("videos1")
+        else:
+            msg.body("Do you a Grow any other crop ?")
+            msg.body("Yes")
+            msg.body("No") 
+
+            
+
     else:
         msg.body("Valid Question for this ")
 
