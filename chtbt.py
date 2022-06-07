@@ -6,18 +6,18 @@ from fastapi import FastAPI
 
 app =FastAPI()
 
-@app.get("/")
-async def hello():
-    return "welcome page"
-# app = Flask(__name__)
+# @app.get("/")
+# async def hello():
+#     return "welcome page"
+app = Flask(__name__)
 
-# @app.route("/")
-# def hello():
-#     return "Hello, World!"
+@app.route("/")
+def hello():
+    return "Hello, World!"
 
-# @app.route("/cht", methods=['POST'])
-@app.post("/cht")
-async def bot(user_msg):
+@app.route("/cht", methods=['POST'])
+# @app.post("/cht")
+async def bot():
     """Respond to incoming calls with a simple text message."""
     
     # Fetch the message
@@ -28,7 +28,7 @@ async def bot(user_msg):
     
     msg.body("Are you a Corn Grower ? \n yes \n no")
 
-    # user_msg = request.form.get('Body').lower()
+    user_msg = request.form.get('Body').lower()
         
     if 'yes' in user_msg:
             msg.body("Did You Know that Fortenza Duo can secure your plant stand ?")
@@ -58,6 +58,6 @@ async def bot(user_msg):
     return str(bot_resp)
     # return user_msg
 
-# if __name__ == "__main__":
-#     # app.run(debug=True)
-#     app.run()
+if __name__ == "__main__":
+    # app.run(debug=True)
+    app.run()
