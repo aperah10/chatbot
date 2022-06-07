@@ -5,10 +5,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 from fastapi import FastAPI 
 
 
-# app =FastAPI()
-# @app.get("/")
-# def hello():
-#     return "welcome page"
+
 app = Flask(__name__)
 
 @app.route("/")

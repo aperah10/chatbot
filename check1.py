@@ -1,5 +1,10 @@
 print("hello seven")
 
+# app =FastAPI()
+# @app.get("/")
+# def hello():
+#     return "welcome page"
+
 def bots():
     while True:
         a= input("Are you Corn Grower ?")

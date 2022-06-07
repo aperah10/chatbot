@@ -1,1 +1,1 @@
-web gunicorn  chtbt:app
+web gunicorn chtbt:app
