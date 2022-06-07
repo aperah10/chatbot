@@ -26,11 +26,14 @@ async def bot():
     msg = bot_resp.message()
     
     
-    msg.body("Are you a Corn Grower ? \n yes \n no")
+    
 
     user_msg = request.form.get('Body').lower()
+
+    if 'hello' in user_msg:
+        msg.body("Are you a Corn Grower ? \n yes  \n no ")
         
-    if 'yes' in user_msg:
+    if "yes" in user_msg:
             msg.body("Did You Know that Fortenza Duo can secure your plant stand ?")
             msg.body("\n 1. if  you want to manage early season pests")
             msg.body("\n 2. if  you want to have excellent establishment")
