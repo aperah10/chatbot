@@ -58,6 +58,6 @@ async def bot(user_msg):
     return str(bot_resp)
     # return user_msg
 
-if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run()
+# if __name__ == "__main__":
+#     # app.run(debug=True)
+#     app.run()
