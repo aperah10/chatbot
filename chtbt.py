@@ -48,7 +48,7 @@ async def bot(user_msg):
             msg.body("Yes")
             msg.body("No") 
 
-    msg.body("Do you want to purchase FD ? \n yes \n no") 
+    # msg.body("Do you want to purchase FD ? \n yes \n no") 
 
             
 
