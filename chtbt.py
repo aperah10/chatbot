@@ -4,16 +4,16 @@ import requests
 from twilio.twiml.messaging_response import MessagingResponse
 from fastapi import FastAPI 
 
-app =FastAPI()
 
-@app.get("/")
-def hello():
-    return "welcome page"
-# app = Flask(__name__)
-
-# @app.route("/")
+# app =FastAPI()
+# @app.get("/")
 # def hello():
-#     return "Hello, World!"
+#     return "welcome page"
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, World!"
 
 @app.route("/cht", methods=['POST'])
 # @app.post("/cht")
