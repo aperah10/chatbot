@@ -2,7 +2,7 @@ from flask import Flask,request
 from googlesearch import search
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
-from fastapi import FastAPI 
+
 
 
 
@@ -13,7 +13,6 @@ def hello():
     return "Hello, World!"
 
 @app.route("/cht", methods=['POST'])
-# @app.post("/cht")
 def bot():
     
     
