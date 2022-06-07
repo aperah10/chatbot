@@ -18,9 +18,7 @@ def hello():
 @app.route("/cht", methods=['POST'])
 # @app.post("/cht")
 def bot():
-    """Respond to incoming calls with a simple text message."""
     
-    # Fetch the message
     
     bot_resp= MessagingResponse()
     msg = bot_resp.message()
